@@ -11,6 +11,9 @@ import JobsPage from "./components/jobpage";
 import Messages from "./components/Messages";
 import Connections from "./components/Connections";
 import Settings from "./components/Settings";
+import FindJobsPage from "./components/FindJobsPage";
+import HirePage from "./components/HirePage";
+import PostContentPage from "./components/PostContentPage";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
@@ -22,13 +25,17 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<NovaFilmIndustry />} />
+        <Route path="/post-content" element={<PostContentPage />} />
+        <Route path="/login" element={<LoginSignup />} /> 
         <Route path="/signup" element={<LoginSignup />} />
         <Route path="/dashboard" element={<FilmNetworkDashboard />} />
           <Route path="/profile" element={<UserProfilePage />} />
-        <Route path="/jobs" element={<JobsPage />} />
+         <Route path="/dashboard/jobs" element={<JobsPage />} />
         <Route path="/messages" element={<Messages />} />
         <Route path="/connections" element={<Connections />} />
         <Route path="/settings" element={<Settings />} />
+            <Route path="/dashboard/jobs/find" element={<FindJobsPage />} />
+    <Route path="/dashboard/jobs/hire" element={<HirePage />} />
 
         {/* Future routes like /contact */}
       </Routes>

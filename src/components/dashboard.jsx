@@ -1,18 +1,22 @@
+// src/components/FilmNetworkDashboard.jsx
 import React, { useState, useEffect, useRef } from 'react';
 import '../components/stylesheet/dashboard.css';
 import logoLoop from '../assets/videos/logoloop.mp4';
 import Messages from './Messages';
 import Connections from './Connections';
 import Jobs from './jobpage';
+import FindJobsPage from './FindJobsPage';
+import HirePage from './HirePage';
 import Settings from './Settings';
 import UserProfilePage from './profilecard';
+import PostContentPage from './PostContentPage';
 import { useNavigate } from 'react-router-dom';
 import '../index.css';
 
 const FilmNetworkDashboard = () => {
   const [activeSection, setActiveSection] = useState('Feed');
   const [showLogoutPopup, setShowLogoutPopup] = useState(false);
-  const mainRef = useRef(null);
+  const mainRef = useRef(null); 
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -43,6 +47,8 @@ const FilmNetworkDashboard = () => {
             ))}
           </div>
         );
+      case 'Post Content':
+        return <PostContentPage />;
       case 'Profile':
         return <UserProfilePage />;
       case 'Messages':
@@ -50,7 +56,11 @@ const FilmNetworkDashboard = () => {
       case 'Connections':
         return <Connections />;
       case 'Jobs':
-        return <Jobs />;
+        return <Jobs setActiveSection={setActiveSection} />;
+      case 'Find Jobs':
+        return <FindJobsPage />;
+      case 'Hire':
+        return <HirePage />;
       case 'Settings':
         return <Settings />;
       default:
@@ -79,7 +89,7 @@ const FilmNetworkDashboard = () => {
         </div>
 
         <nav className="nav-panel">
-          {['Feed', 'Profile', 'Messages', 'Connections', 'Jobs', 'Settings'].map((item) => (
+          {['Feed','Post Content', 'Profile', 'Messages', 'Connections', 'Jobs', 'Settings'].map((item) => (
             <button
               key={item}
               className={`nav-btn ${activeSection === item ? 'active-glow' : ''}`}
@@ -103,17 +113,14 @@ const FilmNetworkDashboard = () => {
           )}
         </header>
 
-        {/* Right Content Based on Active Section */}
-        <section className="section-wrapper">
-          {renderContent()}
-        </section>
+        <section className="section-wrapper">{renderContent()}</section>
       </main>
 
       {/* Logout Popup */}
       {showLogoutPopup && (
         <div className="logout-popup-center">
           <div className="popup-content-glow">
-            <span>🚀 You have successfully logged out!</span>
+            <span> You have successfully logged out!</span>
           </div>
         </div>
       )}

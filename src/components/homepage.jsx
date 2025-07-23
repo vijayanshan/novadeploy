@@ -148,12 +148,14 @@ useEffect(() => {
   
       {/* Hero */}
       <section id="home" style={{
-        height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center',
+        height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center', 
         textAlign: 'center', background: `url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4') center center / cover`,
         color: 'white', padding: '0 20px'
       }}>
         <div data-aos="fade-up">
-          <h2 style={{ fontSize: '3.5rem', fontWeight: 'bold', marginBottom: '20px' }}>Explore the World of Cinema</h2>
+          <h2 style={{ fontSize: '3.5rem', fontWeight: 'bold', marginBottom: '20px' }}>Explore the World of Cinema </h2>
+         <h2 style={{ fontSize: '3.5rem', fontWeight: 'bold', marginBottom: '20px' }}>Lights...Camera...Nova</h2>
+
           <p style={{ fontSize: '1.2rem', color: '#ccc', maxWidth: '600px', margin: '0 auto 30px' }}>
             Connect with directors, actors, crew, and shooting locations. Your film journey starts here.
           </p>

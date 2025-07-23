@@ -31,6 +31,7 @@
 .sidebar-glass {
   width: 260px;
   background: var(--bg-card);
+  -webkit-backdrop-filter: blur(var(--blur));
   backdrop-filter: blur(var(--blur));
   border-right: 1px solid rgba(0, 255, 255, 0.15);
   padding: 2rem 1rem;
@@ -53,7 +54,7 @@
 .logo-video {
   width: 100px;
   height: auto;
-  border-radius: 12px;
+  border-radius: 50px;
   box-shadow: 0 0 20px #00f, 0 0 40px #0ff;
 }
 
