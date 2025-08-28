@@ -1,8 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+<<<<<<< HEAD
 import yourVideo from '../assets/videos/nova.mp4';
 import '../components/ForgotPassword';
+=======
+>>>>>>> c3f43e0065f92ef2abdf019e4c614383b104c9e8
 import logo from '../assets/nova_logo.png';
 import editorialsImg from '../assets/prefooter/EDITOR.jpg';
 import eventsImg from '../assets/prefooter/EVENT.jpg';
@@ -61,10 +64,16 @@ const NovaFilmIndustry = () => {
     document.addEventListener('mousemove', moveSpotlight);
     return () => document.removeEventListener('mousemove', moveSpotlight);
   }, []);
+<<<<<<< HEAD
   
 
   return (
     <div style={{ backgroundColor: '#000000ff', color: 'white', fontFamily: 'Arial, sans-serif' }}>
+=======
+
+  return (
+    <div style={{ backgroundColor: '#000', color: 'white', fontFamily: 'Arial, sans-serif' }}>
+>>>>>>> c3f43e0065f92ef2abdf019e4c614383b104c9e8
       {/* Spotlight effect */}
       <div
         ref={spotlightRef}
@@ -84,7 +93,11 @@ const NovaFilmIndustry = () => {
       {/* Header */}
       <header
         style={{
+<<<<<<< HEAD
           backgroundColor: '#000000ff',
+=======
+          backgroundColor: '#000',
+>>>>>>> c3f43e0065f92ef2abdf019e4c614383b104c9e8
           color: '#fff',
           padding: '1px,20px',
           display: 'flex',
@@ -168,6 +181,7 @@ const NovaFilmIndustry = () => {
 
   
       {/* Hero */}
+<<<<<<< HEAD
       <div style={{ position: 'relative', width: '100vw', height: '120vh', overflow: 'hidden' }}>
       {/* Video Section */}
       <video 
@@ -194,6 +208,8 @@ const NovaFilmIndustry = () => {
       </video>
 
     </div>
+=======
+>>>>>>> c3f43e0065f92ef2abdf019e4c614383b104c9e8
       <section id="home" style={{
         height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center',
         textAlign: 'center', background: `url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4') center center / cover`,
@@ -388,7 +404,11 @@ const NovaFilmIndustry = () => {
     
   </p>
    <p style={{ marginTop: 20, textAlign: 'center', color: '#ccc' }}>
+<<<<<<< HEAD
     You Forgot Your PassWord? Click{' '}
+=======
+    {' '}
+>>>>>>> c3f43e0065f92ef2abdf019e4c614383b104c9e8
     <span
       style={{ color: '#00f', cursor: 'pointer' }}
       onClick={() => window.location.href = '../ForgotPassword'}

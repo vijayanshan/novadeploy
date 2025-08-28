@@ -18,10 +18,17 @@ code {
   .btn {
     @apply inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500;
   }
+<<<<<<< HEAD
 }/* Stylish Horizontal Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;  /* Vertical scrollbar */
   height: 8px;  /* Horizontal scrollbar */
+=======
+}
+/* Stylish Modern Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+>>>>>>> c3f43e0065f92ef2abdf019e4c614383b104c9e8
 }
 
 ::-webkit-scrollbar-track {
@@ -29,7 +36,11 @@ code {
 }
 
 ::-webkit-scrollbar-thumb {
+<<<<<<< HEAD
   background: linear-gradient(180deg, #f70707, #eecd10);
+=======
+  background: linear-gradient(180deg, #ff0080, #7928ca);
+>>>>>>> c3f43e0065f92ef2abdf019e4c614383b104c9e8
   border-radius: 10px;
   box-shadow: 0 0 10px #ff0080, 0 0 20px #7928ca;
 }
@@ -37,6 +48,7 @@ code {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, #ff4da6, #9b2acf);
 }
+<<<<<<< HEAD
 
 /* Ensure the horizontal scrollbar is styled correctly in landscape and portrait mode */
 @media (orientation: portrait) {
@@ -46,3 +58,5 @@ code {
 }
 
 
+=======
+>>>>>>> c3f43e0065f92ef2abdf019e4c614383b104c9e8

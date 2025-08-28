@@ -6,7 +6,10 @@ import Connections from './Connections';
 import Jobs from './jobpage';
 import Settings from './Settings';
 import UserProfilePage from './profilecard';
+<<<<<<< HEAD
 import ShootingPlace from './shootingplace';
+=======
+>>>>>>> c3f43e0065f92ef2abdf019e4c614383b104c9e8
 import { useNavigate } from 'react-router-dom';
 import '../index.css';
 
@@ -47,8 +50,11 @@ const FilmNetworkDashboard = () => {
         );
       case 'Profile':
         return <UserProfilePage />;
+<<<<<<< HEAD
           case 'Shooting Place':
         return <ShootingPlace  />;
+=======
+>>>>>>> c3f43e0065f92ef2abdf019e4c614383b104c9e8
       case 'Messages':
         return <Messages />;
       case 'Connections':
@@ -83,7 +89,11 @@ const FilmNetworkDashboard = () => {
         </div>
 
         <nav className="nav-panel">
+<<<<<<< HEAD
           {['Feed', 'Profile', 'Messages', 'Connections', 'Jobs','Shooting Place','Settings'].map((item) => (
+=======
+          {['Feed', 'Profile', 'Messages', 'Connections', 'Jobs', 'Settings'].map((item) => (
+>>>>>>> c3f43e0065f92ef2abdf019e4c614383b104c9e8
             <button
               key={item}
               className={`nav-btn ${activeSection === item ? 'active-glow' : ''}`}
