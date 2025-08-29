@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import yourVideo from '../assets/videos/nova.mp4';
+import fcard1 from'../assets/videos/fcard1.mp4';
+import fcard2 from'../assets/videos/fcard2.mp4';
+import fcard3 from'../assets/videos/fcard3.mp4';
 import '../components/ForgotPassword';
 import logo from '../assets/nova_logo.png';
 import editorialsImg from '../assets/prefooter/EDITOR.jpg';
@@ -200,7 +203,9 @@ const NovaFilmIndustry = () => {
         color: 'white', padding: '0 20px'
       }}>
         <div data-aos="fade-up">
-          <h2 style={{ fontSize: '3.5rem', fontWeight: 'bold', marginBottom: '20px' }}>Explore the World of Cinema</h2>
+          <h1 style={{ fontSize: '3.5rem', fontWeight: 'bold', marginBottom: '20px' }}>From the industry...</h1>
+          <h1 style={{ fontSize: '3.5rem', fontWeight: 'bold', marginBottom: '20px' }}>For the industry...</h1> 
+          <h1 style={{ fontSize: '3.5rem', fontWeight: 'bold', marginBottom: '20px' }}>Explore the Word of Cinema....</h1> 
           <p style={{ fontSize: '1.2rem', color: '#ccc', maxWidth: '600px', margin: '0 auto 30px' }}>
             Connect with directors, actors, crew, and shooting locations. Your film journey starts here.
           </p>
@@ -265,6 +270,117 @@ const NovaFilmIndustry = () => {
 </div>
  </div>
       </section>
+    <section style={{
+  display: 'grid',
+  gridTemplateColumns: 'repeat(2, 1fr)',  // Two columns
+  gap: '2rem',
+  padding: '3rem',
+  backgroundColor: '#000',
+  color: 'white'
+}}>
+  {/* Feature Card 1: Zeno */}
+  <div style={{
+    background: 'transparent',
+    padding: '1rem',
+    position: 'relative',
+    borderRadius: '12px',
+    boxShadow: '0 10px 15px rgba(10, 255, 243, 1)',
+    transition: 'all 0.3s ease'
+  }} 
+    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)'}
+      onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'} // Reset glow
+  >
+    <div style={{
+      position: 'relative',
+      width: '100%',
+      height: '300px',
+      borderRadius: '12px',
+      overflow: 'hidden',
+      marginBottom: '1rem',
+      transition: 'transform 0.4s ease'
+    }} onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.03)'} onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'} >
+      <video style={{
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+        borderRadius: '12px'
+      }} autoPlay loop muted>
+       <source src={fcard1} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div style={{
+        position: 'absolute',
+        top: '10px',
+        right: '10px',
+        background: 'rgba(7, 238, 255, 1)',
+        padding: '6px 12px',
+        borderRadius: '20px',
+        color: 'white',
+        fontSize: '0.8rem'
+      }}>
+       
+      </div>
+      
+    </div>
+    <h2>NOVA</h2>
+    <p>The future of filmmaking isn't just a vision—it's a collaboration of ideas, technologies, and dreams working together to create something extraordinary."</p>  
+</div>
+
+  {/* Feature Card 2: Zeno Certified */}
+  <div style={{
+    background: 'transparent',
+    padding: '1rem',
+    position: 'relative',
+    borderRadius: '12px',
+    boxShadow: '0 10px 15px rgba(2, 250, 250, 1)',
+    transition: 'all 0.3s ease'
+  }} 
+     onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)'}
+      onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+  >
+    <div style={{
+      position: 'relative',
+      width: '100%',
+      height: '300px',
+      borderRadius: '12px',
+      overflow: 'hidden',
+      marginBottom: '1rem',
+      transition: 'transform 0.4s ease'
+    }} onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.03)'} onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'} >
+      <video style={{
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover',
+        borderRadius: '12px'
+      }} autoPlay loop muted>
+        <source src={fcard2} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div style={{
+        position: 'absolute',
+        top: '10px',
+        right: '10px',
+        background: 'rgba(0, 255, 221, 0.9)',
+        padding: '6px 12px',
+        borderRadius: '20px',
+        color: 'white',
+        fontSize: '0.8rem'
+      }}>
+      </div>
+      
+    </div>
+    <h2>Creating Beyond Boundaries</h2>
+    <p>We don't just create films, we create worlds. The boundaries of storytelling are limitless when we collaborate with the brightest minds in the industry.</p>
+  </div>
+
+  {/* Add similar code for cards 3 and 4 */}
+</section>
 
     {/* Categories */}
 <SectionTitle id="talents" text="Featured Categories" />
@@ -380,7 +496,7 @@ const NovaFilmIndustry = () => {
   <p style={{ marginTop: 20, textAlign: 'center', color: '#ccc' }}>
     Don't have an account?{' '}
     <span
-      style={{ color: '#00f', cursor: 'pointer' }}
+      style={{ color: 'rgba(0, 255, 200, 1)', cursor: 'pointer' }}
       onClick={() => window.location.href = '../signup'}
     >
       Register
@@ -388,9 +504,9 @@ const NovaFilmIndustry = () => {
     
   </p>
    <p style={{ marginTop: 20, textAlign: 'center', color: '#ccc' }}>
-    You Forgot Your PassWord? Click{' '}
+    Click to Reset the? {' '}
     <span
-      style={{ color: '#00f', cursor: 'pointer' }}
+      style={{ color: 'rgba(0, 255, 200, 1)', cursor: 'pointer' }}
       onClick={() => window.location.href = '../ForgotPassword'}
     >
       

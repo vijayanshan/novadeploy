@@ -29,13 +29,13 @@ code {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #f70707, #eecd10);
+  background: linear-gradient(180deg, #6d6969, #504f4d);
   border-radius: 10px;
-  box-shadow: 0 0 10px #ff0080, 0 0 20px #7928ca;
+  box-shadow: 0 0 10px #4d4c4c, 0 0 20px #eae8eb;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #ff4da6, #9b2acf);
+  background: linear-gradient(180deg, #cfa0b8, #e49f9d);
 }
 
 /* Ensure the horizontal scrollbar is styled correctly in landscape and portrait mode */
