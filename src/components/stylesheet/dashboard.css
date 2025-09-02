@@ -24,7 +24,8 @@
 .dashboard-container {
   display: flex;
   min-height: 100vh;
-  background-color: var(--bg-dark);
+ background: linear-gradient(to right, #000000 0%, #000000 100%);
+
 }
 
 /* Sidebar */
@@ -32,12 +33,12 @@
   width: 260px;
   background: var(--bg-card);
   backdrop-filter: blur(var(--blur));
-  border-right: 1px solid rgba(0, 255, 255, 0.15);
+  border-right: 1px solid rgb(255, 255, 255);
   padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 0 20px #00ffff33;
+  box-shadow: 0 0 20px #9b4eff9c;
   position: sticky;
   top: 0;
   height: 100vh;
@@ -51,10 +52,13 @@
 }
 
 .logo-video {
-  width: 100px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 0 20px #00f, 0 0 40px #0ff;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px; /* Rounded corners */
+object-fit: scale-down; /* Similar to 'contain', but only scales down */
+  border: 2px solid #ddd; /* Optional border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+  overflow: hidden; /* Ensures content doesn't spill out of the border-radius */
 }
 
 
@@ -66,11 +70,11 @@
 }
 
 .nav-btn {
-  background: linear-gradient(to right, #111 0%, #1a1a1a 100%);
-  border: 1px solid #444;
+  background: linear-gradient(to right, #111 0%, #d1caca 100%);
+  border: 1px solid #ffffff;
   border-radius: var(--border-radius);
   padding: 0.75rem 1rem;
-  color: #ccc;
+  color: #ffffff;
   cursor: pointer;
   font-weight: 500;
   text-align: left;
@@ -114,7 +118,7 @@
 .main-content {
   flex: 1;
   padding: 2rem;
-  background: #101010;
+  background: #000000;
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: var(--neon-blue) #222;

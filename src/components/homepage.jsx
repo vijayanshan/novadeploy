@@ -179,8 +179,8 @@ const NovaFilmIndustry = () => {
           top: '50%',  // Centers the video vertically
           left: '50%', // Centers the video horizontally
           transform: 'translate(-50%, -50%)', // Adjusts the position to ensure proper centering
-          width: '80%',  // Sets the video width to 70% of the container
-          height: '80%', // Sets the video height to 70% of the container
+          width: '70%',  // Sets the video width to 70% of the container
+          height: '70%', // Sets the video height to 70% of the container
           border: '150px solid #00ffcc',  // Border color and size
           borderRadius: '15px', 
           border: '10px solid #ffffffff',  // Border color and size
@@ -425,11 +425,11 @@ const NovaFilmIndustry = () => {
         cursor: 'pointer'
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.boxShadow = '0 0 30px rgba(255, 0, 255, 0.5)';
+        e.currentTarget.style.boxShadow = '0 0 30px rgba(9, 238, 226, 0.96)';
         e.currentTarget.style.transform = 'translateY(-6px) scale(1.02)';
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.boxShadow = '0 0 20px rgba(144, 0, 255, 0.2)';
+        e.currentTarget.style.boxShadow = '0 0 20px rgba(98, 232, 241, 0.6)';
         e.currentTarget.style.transform = 'translateY(0) scale(1)';
       }}
     >
@@ -575,10 +575,10 @@ const cardTitle = { fontSize: '1.2rem', marginBottom: '10px', color: 'white' };
 const cardDesc = { color: '#aaa', fontSize: '0.95rem' };
 const inputStyle = {
   width: '100%', padding: '15px', marginBottom: '20px', border: 'none',
-  borderRadius: '8px', background: '#1e1e1e', color: '#fff', fontSize: '1rem'
+  borderRadius: '8px', background: '#423e3eff', color: '#05f8d0ff', fontSize: '1rem'
 };
 const submitBtn = {
-  padding: '12px 30px', background: '#00ffcc', color: '#000',
+  padding: '12px 30px', background: '#14e7b9ff', color: '#000000ff',
   border: 'none', borderRadius: '8px', fontSize: '1rem', cursor: 'pointer'
 };
 const textBlock = {
@@ -603,8 +603,11 @@ const SectionTitle = ({ id, text }) => (
           padding: 40,
           fontSize: "0.9rem",
           color: "#777",
+
         }}
+
       >
+
         &copy; {new Date().getFullYear()} Nova Film Industry. All rights reserved.
       </footer>
 export default NovaFilmIndustry;

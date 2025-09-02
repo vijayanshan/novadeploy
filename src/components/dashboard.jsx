@@ -75,7 +75,6 @@ const FilmNetworkDashboard = () => {
           <video
             src={logoLoop}
             autoPlay
-            loop
             muted
             playsInline
             className="logo-video"

@@ -7,7 +7,6 @@ const LoginSignup = () => {
   const [formData, setFormData] = useState({ name: '', email: '', password: '', confirm: '' });
   const [otp, setOtp] = useState('');
   const [message, setMessage] = useState('');
-
   const correctOtp = "123456";
   const navigate = useNavigate();
 
@@ -39,47 +38,49 @@ const LoginSignup = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     setMessage("Login successful!");
+    setTimeout(() => navigate('/dashboard'), 1000);  // Redirect after login
   };
 
   const pageWrapper = {
     height: '100vh',
     width: '100vw',
-    background: 'linear-gradient(135deg, #1f1c2c, #928dab)',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    background: 'linear-gradient(135deg, #1f1c2c, #928dab)',
     fontFamily: 'Poppins, sans-serif',
   };
 
   const container = {
     width: '400px',
     minHeight: '580px',
-    borderRadius: '20px',
     background: 'rgba(255, 255, 255, 0.1)',
+    padding: '40px',
+    borderRadius: '20px',
+    color: '#fff',
     boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37)',
     backdropFilter: 'blur(10px)',
     border: '1px solid rgba(255, 255, 255, 0.18)',
-    padding: '40px',
-    color: '#fff',
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    transition: 'transform 0.3s ease',
   };
 
   const input = {
     width: '100%',
     padding: '12px 15px',
-    margin: '10px 0',
+    marginTop: '8px',
+    marginBottom: '20px',
     borderRadius: '8px',
-    border: 'none',
     backgroundColor: 'rgba(255, 255, 255, 0.2)',
+    border: 'none',
     color: '#fff',
     fontSize: '14px',
     outline: 'none',
   };
 
   const button = {
-    marginTop: '20px',
     width: '100%',
     padding: '12px',
     borderRadius: '999px',
@@ -89,6 +90,11 @@ const LoginSignup = () => {
     fontWeight: 'bold',
     fontSize: '16px',
     cursor: 'pointer',
+    transition: 'background-color 0.3s ease',
+  };
+
+  const buttonHover = {
+    backgroundColor: '#ff4f4f',
   };
 
   const smallLink = {
@@ -100,22 +106,25 @@ const LoginSignup = () => {
     cursor: 'pointer',
   };
 
-  const toggleLink = {
-    fontSize: '13px',
-    marginTop: '20px',
-    color: '#ffeaea',
-    cursor: 'pointer',
-    textDecoration: 'underline',
-  };
-
   const messageStyle = {
     marginTop: '15px',
     padding: '10px',
-    backgroundColor: 'rgba(0, 0, 0, 0.2)',
     borderRadius: '10px',
-    color: '#0f0',
     fontSize: '14px',
     textAlign: 'center',
+    transition: 'opacity 0.3s ease',
+  };
+
+  const successMessage = {
+    ...messageStyle,
+    backgroundColor: 'rgba(0, 128, 0, 0.2)',
+    color: '#0f0',
+  };
+
+  const errorMessage = {
+    ...messageStyle,
+    backgroundColor: 'rgba(255, 0, 0, 0.2)',
+    color: '#f00',
   };
 
   return (
@@ -125,32 +134,119 @@ const LoginSignup = () => {
 
         {!isSignedUp && !isVerifyingOtp && (
           <form onSubmit={handleSignup} style={{ width: '100%' }}>
-            <input type="text" placeholder="Full Name" name="name" style={input} value={formData.name} onChange={handleInputChange} required />
-            <input type="email" placeholder="Email" name="email" style={input} value={formData.email} onChange={handleInputChange} required />
-            <input type="password" placeholder="Password" name="password" style={input} value={formData.password} onChange={handleInputChange} required />
-            <input type="password" placeholder="Confirm Password" name="confirm" style={input} value={formData.confirm} onChange={handleInputChange} required />
+            <div style={{ width: '100%' }}>
+              <label htmlFor="name" style={{ fontSize: '14px', marginBottom: '5px', color: '#ffd6d6' }}>Full Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                style={input}
+                value={formData.name}
+                onChange={handleInputChange}
+                required
+                placeholder="Full Name"
+              />
+            </div>
+            <div style={{ width: '100%' }}>
+              <label htmlFor="email" style={{ fontSize: '14px', marginBottom: '5px', color: '#ffd6d6' }}>Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                style={input}
+                value={formData.email}
+                onChange={handleInputChange}
+                required
+                placeholder="Email"
+              />
+            </div>
+            <div style={{ width: '100%' }}>
+              <label htmlFor="password" style={{ fontSize: '14px', marginBottom: '5px', color: '#ffd6d6' }}>Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                style={input}
+                value={formData.password}
+                onChange={handleInputChange}
+                required
+                placeholder="Password"
+              />
+            </div>
+            <div style={{ width: '100%' }}>
+              <label htmlFor="confirm" style={{ fontSize: '14px', marginBottom: '5px', color: '#ffd6d6' }}>Confirm Password</label>
+              <input
+                type="password"
+                id="confirm"
+                name="confirm"
+                style={input}
+                value={formData.confirm}
+                onChange={handleInputChange}
+                required
+                placeholder="Confirm Password"
+              />
+            </div>
             <button type="submit" style={button}>Send OTP</button>
           </form>
         )}
 
         {isVerifyingOtp && (
           <form onSubmit={handleVerifyOtp} style={{ width: '100%' }}>
-            <input type="text" placeholder="Enter OTP" style={input} value={otp} onChange={(e) => setOtp(e.target.value)} required />
+            <div style={{ width: '100%' }}>
+              <label htmlFor="otp" style={{ fontSize: '14px', marginBottom: '5px', color: '#ffd6d6' }}>Enter OTP</label>
+              <input
+                type="text"
+                id="otp"
+                name="otp"
+                style={input}
+                value={otp}
+                onChange={(e) => setOtp(e.target.value)}
+                required
+                placeholder="Enter OTP"
+              />
+            </div>
             <button type="submit" style={button}>Verify & Continue</button>
           </form>
         )}
 
-   {isSignedUp && (
-  <form onSubmit={handleLogin} style={{ width: '100%' }}>
-    <input type="email" placeholder="Email" name="loginEmail" style={input} required />
-    <input type="password" placeholder="Password" name="loginPassword" style={input} required />
-    <a href="#" style={smallLink}>Forgot password?</a>
-    <button type="submit" style={button}>Login</button>
-  </form>
-)}
+        {isSignedUp && (
+          <form onSubmit={handleLogin} style={{ width: '100%' }}>
+            <div style={{ width: '100%' }}>
+              <label htmlFor="loginEmail" style={{ fontSize: '14px', marginBottom: '5px', color: '#ffd6d6' }}>Email</label>
+              <input
+                type="email"
+                id="loginEmail"
+                name="loginEmail"
+                style={input}
+                value={formData.email}
+                onChange={handleInputChange}
+                required
+                placeholder="Email"
+              />
+            </div>
+            <div style={{ width: '100%' }}>
+              <label htmlFor="loginPassword" style={{ fontSize: '14px', marginBottom: '5px', color: '#ffd6d6' }}>Password</label>
+              <input
+                type="password"
+                id="loginPassword"
+                name="loginPassword"
+                style={input}
+                value={formData.password}
+                onChange={handleInputChange}
+                required
+                placeholder="Password"
+              />
+            </div>
+            <a href="#" style={smallLink}>Forgot password?</a>
+            <button type="submit" style={button}>Login</button>
+          </form>
+        )}
 
-
-        {message && <div style={messageStyle}>{message}</div>}
+        {message && (
+          <div style={message.includes("success") ? successMessage : errorMessage}>
+            {message}
+          </div>
+        )}
       </div>
     </div>
   );
